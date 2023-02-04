@@ -1,0 +1,78 @@
+### Get all local
+Get http://localhost:3000/weapons
+### Get one local
+Get http://localhost:3000/weapons/63dd586aaa7e0d80ef3b5b15
+### Get one local
+GET http://localhost:3000/weapons/63dd59b4aa7e0d80ef3b5b16
+### Get one local
+GET http://localhost:3000/weapons/63dd5a79aa7e0d80ef3b5b17
+
+### Get all Render
+GET https://web-backend-2.onrender.com/weapons
+### Get one Render
+GET https://web-backend-2.onrender.com/weapons/63dd586aaa7e0d80ef3b5b15
+### Get one Render
+GET https://web-backend-2.onrender.com/weapons/63dd59b4aa7e0d80ef3b5b16
+### Get one Render
+GET https://web-backend-2.onrender.com/weapons/63dd5a79aa7e0d80ef3b5b17
+
+
+### Create Weapon
+POST http://localhost:3000/weapons HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Sleeper Simulant",
+    "gunPerkOne": "Polygonal Rifling",
+    "gunPerkTwo": "Flared Magwell",
+    "weaponPerkOne": "Moving Target",
+    "weaponPerkTwo": "Composite Stock",
+    "masterwork": "Catalyst",
+    "originTrait": false,
+    "mod": false
+}
+### Update Weapon
+PUT http://localhost:3000/weapons/63c1d89cf2ec7fa6da1b222b HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Sleeper Simulant",
+    "gunPerkOne": "Corkscrew Rifling",
+    "gunPerkTwo": "Alloy Magazine",
+    "weaponPerkOne": "Moving Target",
+    "weaponPerkTwo": "Composite Stock",
+    "masterwork": "Catalyst",
+    "originTrait": false,
+    "mod": false
+}
+### Delete Weapon
+DELETE http://localhost:3000/weapons/63deb823ef2b5b2f50d9b7c1
+
+
+### Create Weapon Render
+POST https://web-backend-2.onrender.com/weapons HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName":"Emi",
+    "lastName":"Tempest",
+    "email":"tempest.emi@email.com",
+    "favoriteColor":"Purple",
+    "birthday":"01/19/2013"
+}
+### Update Weapon Render
+PUT https://web-backend-2.onrender.com/weapons/63c1d89cf2ec7fa6da1b222b HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Sleeper Simulant",
+    "gunPerkOne": "Corkscrew Rifling",
+    "gunPerkTwo": "Alloy Magazine",
+    "weaponPerkOne": "Moving Target",
+    "weaponPerkTwo": "Composite Stock",
+    "masterwork": "Catalyst",
+    "originTrait": false,
+    "mod": false
+}
+### Delete Weapon Render
+DELETE https://web-backend-2.onrender.com/weapons/63cae80cb43129ce4cdf1258

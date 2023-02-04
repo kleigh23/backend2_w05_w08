@@ -1,0 +1,22 @@
+{
+  "name": "backend2_w05_w08",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kleigh23/backend2_w05_w08.git"
+  },
+  "author": "Kelley Robertson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kleigh23/backend2_w05_w08/issues"
+  },
+  "homepage": "https://github.com/kleigh23/backend2_w05_w08#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
