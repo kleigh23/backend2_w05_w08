@@ -3,7 +3,10 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
   const result = await mongodb.getDb().db('gaming').collection('weapons').find();
-  result.toArray().then((lists) => {
+  result.toArray().then((err, lists) => {
+    if (err) {
+      res.status(400).json({ message: err });
+    }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
@@ -16,7 +19,10 @@ const getSingle = async (req, res, next) => {
     .db('gaming')
     .collection('weapons')
     .find({ _id: userId });
-  result.toArray().then((lists) => {
+  result.toArray().then((err, lists) => {
+    if (err) {
+      res.status(400).json({ message: err });
+    }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });
@@ -46,6 +52,10 @@ const createWeapon = async (req, res) => {
 }
 
 const updateWeapon = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to update a contact.');
+  }
+  const userId = new ObjectId(req.params.id);
   const weapon = {
     name: req.body.name,
     gunPerkOne: req.body.gunPerkOne,
@@ -56,7 +66,6 @@ const updateWeapon = async (req, res) => {
     originTrait: req.body.originTrait,
     mod: req.body.mod
   };
-  const userId = new ObjectId(req.params.id);
   const result = await mongodb
   .getDb()
   .db('gaming')
@@ -71,6 +80,9 @@ const updateWeapon = async (req, res) => {
 }
 
 const deleteWeapon = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to delete a contact.');
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('gaming').collection('weapons').remove({ _id: userId }, true);
   console.log(result);
