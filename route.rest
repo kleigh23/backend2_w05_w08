@@ -28,11 +28,11 @@ Content-Type: application/json
     "weaponPerkOne": "Moving Target",
     "weaponPerkTwo": "Composite Stock",
     "masterwork": "Catalyst",
-    "originTrait": false,
-    "mod": false
+    "originTrait": "false",
+    "mod": "false"
 }
 ### Update Weapon local
-PUT http://localhost:3000/weapons/63df0457c255a7f48212822e HTTP/1.1
+PUT http://localhost:3000/weapons/63e6c2a4537b78f8c0359b45 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
     "mod": "something special"
 }
 ### Delete Weapon local
-DELETE http://localhost:3000/weapons/63df0457c255a7f48212822e
+DELETE http://localhost:3000/weapons/63e6c2a4537b78f8c0359b45
 
 
 ### Create Weapon Render

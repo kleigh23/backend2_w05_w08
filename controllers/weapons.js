@@ -84,7 +84,11 @@ const deleteWeapon = async (req, res) => {
     res.status(400).json('Must use a valid contact id to delete a contact.');
   }
   const userId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db('gaming').collection('weapons').remove({ _id: userId }, true);
+  const result = await mongodb
+  .getDb()
+  .db('gaming')
+  .collection('weapons')
+  .deleteOne({ _id: userId }, true);
   console.log(result);
   if (result.deletedCount > 0) {
     res.status(200).send();

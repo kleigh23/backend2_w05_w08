@@ -2,7 +2,6 @@ const validator = require('../helpers/validate.js');
 
 const saveWeapon = (req, res, next) => {
   const validationRule = {
-
     name: 'required|string',
     gunPerkOne: 'required|string',
     gunPerkTwo: 'required|string',
