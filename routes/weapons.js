@@ -4,7 +4,9 @@ const router = express.Router();
 const WeaponsController = require('../controllers/weapons');
 const validation = require('../middleware/validate');
 
-router.get('/', WeaponsController.getAll);
+const { requiresAuth } = require('express-openid-connect');
+
+router.get('/', requiresAuth(), WeaponsController.getAll);
 
 router.get('/:id', WeaponsController.getSingle);
 
