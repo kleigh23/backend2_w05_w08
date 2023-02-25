@@ -40,7 +40,7 @@ app
     next();
   })
   .use('/', require('./routes'))
-  .get('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  .use('/api-docs', requiresAuth(), swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
