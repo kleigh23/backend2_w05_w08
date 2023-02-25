@@ -71,7 +71,7 @@ Content-Type: application/json
     "weaponPerkOne": "Moving Target",
     "weaponPerkTwo": "Composite Stock",
     "masterwork": "Catalyst",
-    "originTrait": false,
+    "originTrait": "false",
     "mod": "somthing special"
 }
 ### Delete Weapon Render
